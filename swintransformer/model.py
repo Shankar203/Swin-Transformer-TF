@@ -244,6 +244,9 @@ class SwinTransformerBlock(tf.keras.layers.Layer):
 
         return x
 
+    def compute_output_shape(self, input_shape):
+        return (input_shape[0], input_shape[1], 1024)
+
 
 class PatchMerging(tf.keras.layers.Layer):
     def __init__(self, input_resolution, dim, norm_layer=LayerNormalization, prefix=''):
