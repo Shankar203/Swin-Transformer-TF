@@ -425,7 +425,7 @@ class SwinTransformerModel(tf.keras.Model):
         return x
 
     def compute_output_shape(self, input_shape):
-        return (input_shape[0], input_shape[1], 1024)
+        return (input_shape[0], 1024)
 
 def SwinTransformer(model_name='swin_tiny_224', num_classes=1000, include_top=True, pretrained=True, use_tpu=False, cfgs=CFGS):
     cfg = cfgs[model_name]
